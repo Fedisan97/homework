@@ -14,7 +14,7 @@ public class Main{
                 double a = scanner.nextDouble();
                 System.out.print("b = ");
                 double b = scanner.nextDouble();
-                System.out.printf("Площадь: %.2fn", a * b);
+                System.out.print("Площадь:" + a * b);
                 break;
 
 
@@ -22,7 +22,7 @@ public class Main{
 
                 System.out.print("Радиус круга R = ");
                 double r = scanner.nextDouble();
-                System.out.printf("Площадь: %.2fn", Math.PI * r * r);
+                System.out.print("Площадь:" + Math.PI * r * r);
                 break;
 
 
@@ -39,7 +39,7 @@ public class Main{
                 double sideC = scanner.nextDouble();
                 double p = (sideA + sideB + sideC) / 2;
                 double s = Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
-                System.out.printf("Площадь: %.2fn", s);
+                System.out.print("Площадь:" + s);
                 break;
 
 
