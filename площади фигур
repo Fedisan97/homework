@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1-прямоугольник, 2-круг, 3-треугольник, 4-конус");
+        System.out.println("1-прямоугольник, 2-круг, 3-треугольник");
         System.out.print("Выберите фигуру: ");
         String figure = scanner.nextLine();
         switch (figure) {
@@ -42,21 +42,7 @@ public class Main{
                 break;
              
                 
-            case "4":
-            
-            System.out.print("Введите радиус основания конуса:");
-            double radius = scanner.nextDouble();
-            System.out.print("Введите высоту конуса: ");
-            double hei = scanner.nextDouble();
-         double S1 = Math.sqrt(radius*radius+hei*hei);
-         double att = Math.PI*radius*S1;
-         System.out.print ("Площадь:"" att );
-         
-            
-  
-                
-                
-        
+
         
             
             
