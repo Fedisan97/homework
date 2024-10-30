@@ -1,22 +1,64 @@
 import java.util.Scanner;
-
-public class Main {
     public static void main(String[] args) {
         Scanner gg = new Scanner(System.in);
-        int m  = gg.nextInt(); // строки
+        // вводить данные сюда
+        int m = gg.nextInt(); // строки
         int n = gg.nextInt(); // столбцы
         int k = gg.nextInt(); //  количество мин
-        int [][] mins = new  int[k][2];
 
-        for (int i = 0; i<k; i++ ){
+
+        // mins = мина, на тяжёлый случай если буду тупить
+        int[][] mins = new int[k][2]; // для координат мин
+        for (int i = 0; i < k; i++) {
             mins[i][0] = gg.nextInt();
             mins[i][1] = gg.nextInt();
         }
-        char [] [] fi = new char[m][n];
 
-        for (int i  = 0; i < m; i++);{
-            for (int i = 0; i <m; i++);
+
+        // Создаем игровое поле
+        char[][] fi = new char[m][n];
+
+
+        // зополняем поле пустыми клетками
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                fi[i][j] = ' ';
+            }
         }
-        
+        // мины на поле размищать крч
+        for (int i = 0; i < k; i++) {
+            int row = mins[i][0] - 1;
+            int col = mins[i][1] - 1;
+            fi[row][col] = '*';
+        }
 
 
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (fi[i][j] == '*') ;   // обнова клеток
+                {
+                    {
+                        continue;
+                    }
+                    // обновка тоже
+
+                    int count = 0;
+                    for (int x = Math.max(i - 1, 0); x <= Math.min(i + 1, m - 1); x++) {
+                        for (int y = Math.max(j - 1, 0); y <= Math.min(j + 1, n - 1); y++) {
+                            if (fi[x][y] == '*') count++;
+                        }
+                    }
+                    if (count > 0) fi[i][j] = (char) (count + '0');
+                }
+            }
+            // выводим результат
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    System.out.print(fi[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+
+
+    
