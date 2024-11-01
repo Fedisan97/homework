@@ -4,10 +4,9 @@ import java.util.Scanner;
 
         String DA = gg.nextLine();
 
-        // Удаляем все пробелы из строки
         String withoutSpaces = DA.replace(" ", "");
 
-        // Проверяем, является ли строка палиндромом
+      
         int left = 0;
         int right = withoutSpaces.length() - 1;
 
