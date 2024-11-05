@@ -1,66 +1,71 @@
 import java.util.Scanner;
-    public static void main(String[] args) {
-        Scanner gg = new Scanner(System.in);
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         // ввод данных
-        System.out.println("количество строк");
-        int m = gg.nextInt(); // строки
-        System.out.println("количество столбцов");
-        int n = gg.nextInt(); // столбцы
-        System.out.println("количество мин");
-        int k = gg.nextInt(); // количество мин
-
+        System.out.println("Количество строк:");
+        int m = scanner.nextInt(); // строки
+        System.out.println("Количество столбцов:");
+        int n = scanner.nextInt(); // столбцы
+        System.out.println("Количество мин:");
+        int k = scanner.nextInt(); // количество мин
 
         // массив для хранения координат мин
-        int[][] mins = new int[k][2]; // для координат мин
+        int[][] mines = new int[k][2]; // для координат мин
 
-        System.out.println("введите координаты мин (строка столбец):");
+        System.out.println("Введите координаты мин (строка столбец):");
         for (int i = 0; i < k; i++) {
-            mins[i][0] = gg.nextInt() -1;
-            mins[i][1] = gg.nextInt() -1;
+            mines[i][0] = scanner.nextInt() - 1; // строки начинаются с 1
+            mines[i][1] = scanner.nextInt() - 1; // столбцы тоже начинаются с 1
         }
 
         // создание игрового поля
-        char[][] fi = new char[m][n];
+        char[][] field = new char[m][n];
 
         // заполнение поля пустыми клетками
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                fi[i][j] = ' ';
+                field[i][j] = ' ';
             }
         }
 
         // размещение мин на поле
         for (int i = 0; i < k; i++) {
-            int row = mins[i][0] - 1;
-            int col = mins[i][1] - 1;
-            fi[row][col] = '*';
+            int row = mines[i][0];
+            int col = mines[i][1];
+            field[row][col] = '*'; // устанавливаем мину
         }
 
-        // обновление соседних клеток
+        // oбновление соседних клеток
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (fi[i][j] == '*') {
+                if (field[i][j] == '*') {
                     continue;
                 }
 
-                // подсчет количества мин вокруг текущей клетки
+                // подсчёт количества мин вокруг текущей клетки
                 int count = 0;
                 for (int x = Math.max(i - 1, 0); x <= Math.min(i + 1, m - 1); x++) {
                     for (int y = Math.max(j - 1, 0); y <= Math.min(j + 1, n - 1); y++) {
-                        if (fi[x][y] == '*') count++;
+                        if (x != i || y != j && field[x][y] == '*') { // Проверяем, что это не сама мина и она существует
+                            count++;
+                        }
                     }
                 }
-                if (count > 0) fi[i][j] = (char) (count + '0'); // запись количества мин в клетке
+                if (count > 0) {
+                    field[i][j] = (char)(count + '0'); // Запись количества мин в клетке
+                }
             }
         }
 
-        // вывод результата
+        // Вывод результата
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.print(fi[i][j] + " ");
+                System.out.print(field[i][j] + " ");
             }
             System.out.println();
         }
     }
+}
