@@ -4,37 +4,37 @@ class Program
 {
     static void Main()
     {
-        double firstNumber, secondNumber;
+        double fsdd, secon;
         char operation;
 
         Console.Write("введите первое число: ");
-        firstNumber = Convert.ToDouble(Console.ReadLine());
+        fsdd = Convert.ToDouble(Console.ReadLine());
 
         Console.Write("введите операцию (+, -, *, /): ");
         operation = Convert.ToChar(Console.ReadLine());
 
         Console.Write("введите второе число: ");
-        secondNumber = Convert.ToDouble(Console.ReadLine());
+        secon = Convert.ToDouble(Console.ReadLine());
 
         switch (operation)
         {
             case '+':
-                Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+                Console.WriteLine($"{fsdd} + {secon} = {fsdd + secon}");
                 break;
             case '-':
-                Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+                Console.WriteLine($"{fsdd} - {secon} = {fsdd - secon}");
                 break;
             case '*':
-                Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+                Console.WriteLine($"{fsdd} * {secon} = {fsdd * secon}");
                 break;
             case '/':
-                if (secondNumber != 0)
+                if (secon != 0)
                 {
-                    Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+                    Console.WriteLine($"{fsdd} / {secon} = {fsdd / secon}");
                 }
                 else
                 {
-                    Console.WriteLine("ошибка! Деление на ноль невозможно");
+                    Console.WriteLine("шибка! Деление на ноль невозможно");
                 }
                 break;
             default:
