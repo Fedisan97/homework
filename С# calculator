@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double firstNumber, secondNumber;
+        char operation;
+
+        Console.Write("введите первое число: ");
+        firstNumber = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("введите операцию (+, -, *, /): ");
+        operation = Convert.ToChar(Console.ReadLine());
+
+        Console.Write("введите второе число: ");
+        secondNumber = Convert.ToDouble(Console.ReadLine());
+
+        switch (operation)
+        {
+            case '+':
+                Console.WriteLine($"{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+                break;
+            case '-':
+                Console.WriteLine($"{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+                break;
+            case '*':
+                Console.WriteLine($"{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+                break;
+            case '/':
+                if (secondNumber != 0)
+                {
+                    Console.WriteLine($"{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+                }
+                else
+                {
+                    Console.WriteLine("ошибка! Деление на ноль невозможно");
+                }
+                break;
+            default:
+                Console.WriteLine("неверная операция");
+                break;
+        }
+    }
+}
