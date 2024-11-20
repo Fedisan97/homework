@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class MagMax {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner gg = new Scanner(System.in);
         System.out.println("вв=ведите количество строк и столбцов: ");
-        int ns = scanner.nextInt(), k = scanner.nextInt();
+        int ns = gg.nextInt(), k = gg.nextInt();
 
         System.out.println("введите элементы матрицы: ");
         double[][] matrix = new double[ns][k];
         for (int i = 0; i < ns; i++) {
             for (int j = 0; j < k; j++) {
-                matrix[i][j] = scanner.nextDouble();
+                matrix[i][j] = gg.nextDouble();
             }
         }
 
