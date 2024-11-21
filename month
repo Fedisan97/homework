@@ -44,38 +44,3 @@ public class Main {
     }
 }
 
-
-
-import java.util.Scanner;
-
-public class Main {
-    public static String join(String[] tokens, char delimiter) {
-        // Проверяем, есть ли элементы в массиве
-        if (tokens.length == 0) {
-            return ""; // Если массив пустой, возвращаем пустую строку
-        }
-        
-        StringBuilder result = new StringBuilder(tokens[0]); // Начинаем с первого элемента
-        
-        // Добавляем остальные элементы через разделитель
-        for (int i = 1; i < tokens.length; i++) {
-            result.append(delimiter).append(tokens[i]);
-        }
-        
-        return result.toString();
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Создаем объект для ввода данных
-
-        System.out.print("Введите строки через пробел: ");
-        String input = scanner.nextLine(); // Считываем введенный текст
-        String[] words = input.split(" "); // Разбиваем строку на массив слов
-
-        System.out.print("Введите разделитель: ");
-        char delimiter = scanner.next().charAt(0); // Считываем первый символ из следующего ввода
-
-        String joinedString = join(words, delimiter);
-        System.out.println(joinedString); // Выводим результат
-    }
-}
