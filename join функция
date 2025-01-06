@@ -3,7 +3,7 @@ public class Main {
     public static String join(String[] tokens, char delimiter) {
 
         if (tokens.length == 0) {
-            return "";
+             return "";
         }
 
         StringBuilder result = new StringBuilder(tokens[0]);
