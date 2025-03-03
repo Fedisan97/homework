@@ -1,6 +1,6 @@
 // https://www.baeldung.com/java-pairs
 // переделать код 
- 
+  
 
 import java.util.Scanner;
 
