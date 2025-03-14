@@ -13,7 +13,7 @@ public class Main {
 
         return result.toString();
     }
-
+             
     public static void main(String[] args) {
         Scanner gg = new Scanner(System.in);
 
