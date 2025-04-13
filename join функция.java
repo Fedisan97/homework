@@ -10,7 +10,7 @@ public class Main {
         for (int i = 1; i < tokens.length; i++) {
             result.append(delimiter).append(tokens[i]);
         }
-
+ 
         return result.toString();
     }
              
