@@ -9,7 +9,7 @@ public class Main {
         int b = gg.nextInt();
         System.out.println("Стророна С");
         int c = gg.nextInt();
-
+ 
          if (a <= 0 || b <= 0 || c <= 0)
         {
             System.out.println("UNDEFINED");
