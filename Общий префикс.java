@@ -6,7 +6,7 @@ public class Ss {
 
 
         //  наибольшего общего префикса строк
-
+ 
  
         if (strings.length == 0) {
             return "";
